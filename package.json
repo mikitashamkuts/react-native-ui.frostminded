@@ -26,6 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
+    "start": "yarn workspace react-native-ui.frostminded-example start",
     "example": "yarn workspace react-native-ui.frostminded-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
@@ -66,19 +67,23 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
+    "nativewind": "^2.0.11",
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.73.4",
     "react-native-builder-bob": "^0.20.0",
     "release-it": "^15.0.0",
+    "tailwindcss": "3.2.2",
     "typescript": "^5.0.2"
   },
   "resolutions": {
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "nativewind": "^2.0.11",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "tailwindcss": "3.2.2"
   },
   "workspaces": [
     "example"
