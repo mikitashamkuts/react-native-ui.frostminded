@@ -9,6 +9,7 @@
   "files": [
     "lib"
   ],
+  "exclude": "src/**",
   "scripts": {
     "start": "yarn workspace react-native-ui.frostminded-example start",
     "example": "yarn workspace react-native-ui.frostminded-example",
