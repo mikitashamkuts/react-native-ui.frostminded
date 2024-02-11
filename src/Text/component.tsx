@@ -2,14 +2,14 @@ import React, { type FC, memo } from 'react';
 import { Text as RNText } from 'react-native';
 
 type Props = {
-  test: any;
+  test2: any;
 };
 
-const Text: FC<Props> = ({ children, test }) => {
+const Text: FC<Props> = ({ children, test2 }) => {
   return (
     <RNText className="text-red">
       {children}
-      {test}
+      {test2}
     </RNText>
   );
 };
