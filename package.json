@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui.frostminded",
-  "version": "0.2.0",
+  "version": "0.11.0",
   "description": "UI for UX & DX",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -8,22 +8,7 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "lib"
   ],
   "scripts": {
     "example": "yarn workspace react-native-ui.frostminded-example",
