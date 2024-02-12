@@ -11,13 +11,15 @@
     "lib"
   ],
   "scripts": {
+    "start": "yarn example start",
     "example": "yarn workspace react-native-ui.frostminded-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it --no-git.requireUpstream"
+    "release": "release-it --no-git.requireUpstream",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "react-native",
@@ -51,6 +53,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.73.4",
@@ -135,8 +139,18 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
+      [
+        "commonjs",
+        {
+          "sourceMaps": false
+        }
+      ],
+      [
+        "module",
+        {
+          "sourceMaps": false
+        }
+      ],
       [
         "typescript",
         {

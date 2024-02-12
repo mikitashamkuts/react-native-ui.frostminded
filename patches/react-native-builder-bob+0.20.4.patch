@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-builder-bob/lib/targets/typescript.js b/node_modules/react-native-builder-bob/lib/targets/typescript.js
+index e5c62f2..dc36656 100644
+--- a/node_modules/react-native-builder-bob/lib/targets/typescript.js
++++ b/node_modules/react-native-builder-bob/lib/targets/typescript.js
+@@ -134,7 +134,7 @@ async function build({
+     } catch (e) {// Ignore
+     }
+ 
+-    const result = _crossSpawn.default.sync(tsc, ['--pretty', '--declaration', '--declarationMap', '--emitDeclarationOnly', '--project', project, '--outDir', output], {
++    const result = _crossSpawn.default.sync(tsc, ['--pretty', '--declaration', '--emitDeclarationOnly', '--project', project, '--outDir', output], {
+       stdio: 'inherit',
+       cwd: root
+     });
