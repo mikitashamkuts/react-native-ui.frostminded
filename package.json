@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui.frostminded",
-  "version": "0.12.0",
+  "version": "0.14.0",
   "description": "UI for UX & DX",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -18,7 +18,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it --no-git.requireUpstream",
+    "release": "release-it",
     "postinstall": "patch-package"
   },
   "keywords": [
