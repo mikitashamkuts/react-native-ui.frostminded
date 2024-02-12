@@ -51,4 +51,4 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: Release package
-        run: yarn release
+        run: yes | yarn release
