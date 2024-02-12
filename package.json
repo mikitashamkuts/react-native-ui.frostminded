@@ -1,38 +1,25 @@
 {
   "name": "react-native-ui.frostminded",
-  "version": "0.2.0",
+  "version": "0.12.0",
   "description": "UI for UX & DX",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
-  "react-native": "src/index",
+  "react-native": "lib/commonjs/index",
   "source": "src/index",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "lib"
   ],
   "scripts": {
+    "start": "yarn example start",
     "example": "yarn workspace react-native-ui.frostminded-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it --no-git.requireUpstream"
+    "release": "release-it --no-git.requireUpstream",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "react-native",
@@ -66,6 +53,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.73.4",
@@ -150,8 +139,18 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
+      [
+        "commonjs",
+        {
+          "sourceMaps": false
+        }
+      ],
+      [
+        "module",
+        {
+          "sourceMaps": false
+        }
+      ],
       [
         "typescript",
         {
