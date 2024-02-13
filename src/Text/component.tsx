@@ -1,13 +1,12 @@
 import React, { type FC, memo } from 'react';
 import { Text as RNText } from 'react-native';
 
-const Text: FC = ({ children }) => {
-  return (
-    <RNText>
-      {children}
-      {children}
-    </RNText>
-  );
+type Props = {
+  test: number;
+};
+
+const Text: FC<Props> = ({ test }) => {
+  return <RNText>{test}</RNText>;
 };
 
 export default memo(Text);
