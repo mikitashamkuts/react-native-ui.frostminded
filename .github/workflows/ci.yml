@@ -47,5 +47,10 @@ jobs:
       - name: Authenticate with npm
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "mikitashamkuts@gmail.com"
+          git config --global user.name "Mikita Shamkuts"
+
       - name: Release package
         run: yarn release -y
