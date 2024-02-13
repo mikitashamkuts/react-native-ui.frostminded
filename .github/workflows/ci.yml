@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   lint:
@@ -35,7 +32,7 @@ jobs:
       - name: Run unit tests
         run: yarn test --maxWorkers=2 --coverage
 
-  build-library:
+  release-library:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,15 +44,15 @@ jobs:
       - name: Build package
         run: yarn prepare
 
-  build-web:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Authenticate with npm
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build example for Web
+      - name: Configure Git
         run: |
-          yarn example expo export:web
+          git config --global user.email "mikitashamkuts@gmail.com"
+          git config --global user.name "Mikita Shamkuts"
+
+      - name: Release package
+        run: yarn release -y
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
