@@ -54,3 +54,5 @@ jobs:
 
       - name: Release package
         run: yarn release -y
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
