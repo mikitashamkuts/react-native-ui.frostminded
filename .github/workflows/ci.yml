@@ -15,10 +15,10 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Lint files
-        run: yarn lint
+        run: yarn lint || (echo "Lint-checking failed, stopping workflow"; exit 1)
 
       - name: Typecheck files
-        run: yarn typecheck
+        run: yarn typecheck || (echo "Type-checking failed, stopping workflow"; exit 1)
 
   test:
     runs-on: ubuntu-latest
