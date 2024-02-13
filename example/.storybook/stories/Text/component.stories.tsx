@@ -7,10 +7,10 @@ const TextMeta: Meta<typeof Text> = {
   title: 'Text',
   component: Text,
   argTypes: {
-    onPress: { action: 'pressed the button' },
+    // onPress: { action: 'pressed the button' },
   },
   args: {
-    children: 'Hello world',
+    test: 4,
   },
   decorators: [
     (Story) => (
@@ -27,6 +27,6 @@ export const Basic: StoryObj<typeof Text> = {};
 
 export const AnotherExample: StoryObj<typeof Text> = {
   args: {
-    children: 'Another example',
+    test: 4,
   },
 };
