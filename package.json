@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui.frostminded",
-  "version": "0.14.8",
+  "version": "0.14.9",
   "description": "UI for UX & DX",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
